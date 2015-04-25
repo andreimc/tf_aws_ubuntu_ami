@@ -20,5 +20,6 @@ output = {
   }
 }
 
-puts JSON.pretty_generate(output)
-
+File.open('variables.tf.json', 'wb+') do |f|
+  f.write(JSON.pretty_generate(output))
+end
